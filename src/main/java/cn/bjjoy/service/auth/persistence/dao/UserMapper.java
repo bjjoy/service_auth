@@ -11,29 +11,16 @@ import java.util.Map;
 @Mapper
 @Repository
 public interface UserMapper {
-    int deleteByPrimaryKey(String uuid);
+    int deleteByUuid(String uuid);
 
-    int insert(Map param);
+    int insertUser(Map param);
 
-    int insertSelective(Map param);
+    User getByUuid(String uuid);
 
-    User selectByPrimaryKey(String uuid);
+    int updateByUuid(Map param);
 
-    int updateByPrimaryKeySelective(Map param);
-
-    int updateByPrimaryKey(User record);
-
-    /**
-     * 根据用户登录查询用户信息
-     *
-     * @param loginName
-     * @return
-     */
-    List<User> selectByLoginName(String loginName);
-
-    List<Map> getList(Map param);
+    List<User> getList(Map param);
 
     Integer getCount(Map param);
 
-    Map getUserDetail(@Param("uuid") String uuid);
 }

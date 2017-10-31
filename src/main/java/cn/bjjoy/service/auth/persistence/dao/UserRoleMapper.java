@@ -19,6 +19,7 @@ public interface UserRoleMapper {
     int update(Map param);
 
     int delete(Map param);
+
     /**
      * 根据用户uuid获取user_role信息
      */

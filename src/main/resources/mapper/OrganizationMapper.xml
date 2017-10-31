@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bjjoy.service.auth.persistence.dao.OrganizationMapper">
+  <resultMap id="BaseResultMap" type="cn.bjjoy.service.auth.entity.Organization">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="area_code" jdbcType="VARCHAR" property="areaCode" />
+    <result column="type" jdbcType="CHAR" property="type" />
+    <result column="grade" jdbcType="CHAR" property="grade" />
+    <result column="useable" jdbcType="TINYINT" property="useable" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="del_flag" jdbcType="CHAR" property="delFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, parent_id, name, sort, code, area_id, area_code, type, grade, useable, create_by, 
+    create_date, update_by, update_date, remarks, del_flag
+  </sql>
+  <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from organization
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteById" parameterType="java.lang.Integer">
+    delete from organization
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertOrganization" parameterType="cn.bjjoy.service.auth.entity.Organization">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into organization
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="areaId != null">
+        area_id,
+      </if>
+      <if test="areaCode != null">
+        area_code,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+      <if test="useable != null">
+        useable,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null">
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=CHAR},
+      </if>
+      <if test="useable != null">
+        #{useable,jdbcType=TINYINT},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="areaPathName != null">
+        #{areaPathName,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateById" parameterType="cn.bjjoy.service.auth.entity.Organization">
+    update organization
+    <set>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null">
+        area_id = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="areaCode != null">
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=CHAR},
+      </if>
+      <if test="useable != null">
+        useable = #{useable,jdbcType=TINYINT},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from organization
+    where del_flag = 0 AND useable = 1
+  </select>
+  <select id="getChildrenByCode" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from organization
+    <where>
+      1=1
+      <if test="code != null">
+        and code LIKE '${code}%'
+      </if>
+      <if test="name != null">
+        and `name` = #{name}
+      </if>
+       AND del_flag = 0 AND useable = 1
+    </where>
+
+  </select>
+  <select id="getByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from organization
+    where code = #{code,jdbcType=VARCHAR} AND del_flag = 0 AND useable = 1
+  </select>
+
+  <select id="getChildList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from organization
+    <where>
+      1=1
+      <if test="parentId != null">
+        and parent_id = #{parentId}
+      </if>
+    </where>
+
+  </select>
+
+  <update id="updateByParentId" parameterType="cn.bjjoy.service.auth.entity.Organization">
+    update organization
+    <set>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+    </set>
+    where parent_id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getListByCode" resultMap="BaseResultMap">
+  select
+    <include refid="Base_Column_List" />
+   from organization
+  where del_flag = 0
+  and code like '${code}%'
+  order by code ,LENGTH(code)
+  </select>
+
+</mapper>

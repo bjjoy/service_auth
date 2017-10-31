@@ -12,13 +12,11 @@ import java.util.List;
 public interface AreaMapper {
     int deleteById(Integer id);
 
-    int insertSelective(Area record);
+    int insertArea(Area record);
 
-    Area selectByPrimaryKey(Integer id);
+    Area getAreaById(Integer id);
 
-    int updateByPrimaryKeySelective(Area record);
-
-    int updateByPrimaryKey(Area record);
+    int updateById(Area record);
 
     /**
      * 根据id列表获取地区信息

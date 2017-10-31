@@ -11,25 +11,13 @@ import java.util.Map;
 @Mapper
 @Repository
 public interface RoleMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteById(Integer id);
 
-    int insert(Role record);
+    int insertRole(Role record);
 
-    int insertSelective(Role record);
+    Role getById(Integer id);
 
-    Role selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Role record);
-
-    int updateByPrimaryKey(Role record);
-
-    /**
-     * 查询用户的菜单和按钮权限
-     *
-     * @param param
-     * @return
-     */
-//    List<String> queryRoleByUser(GetRoleDto param);
+    int updateById(Role record);
 
     List<Role> getList(Map param);
 
