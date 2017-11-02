@@ -49,7 +49,7 @@
     where user_uuid = #{userUuid,jdbcType=VARCHAR}
   </update>
 
-  <!--<resultMap id="UserRoleMap" extends="BaseResultMap" type="cn.zjhf.ifa.auth.vo.UserRoleVO">-->
+  <!--<resultMap id="UserRoleMap" extends="BaseResultMap" type="cn.bjjoy.service.auth.dto.UserRoleDto">-->
     <!--<result column="name" jdbcType="VARCHAR" property="name" />-->
   <!--</resultMap>-->
 

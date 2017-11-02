@@ -1,5 +1,6 @@
 package cn.bjjoy.service.auth.persistence.dao;
 
+import cn.bjjoy.service.auth.dto.UserRoleDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,7 @@ public interface UserRoleMapper {
     /**
      * 根据用户uuid获取user_role信息
      */
-//    List<UserRole> getUserRoleList(@Param("userUuidList") List<String> userUuidList);
+    List<UserRoleDto> getUserRoleList(@Param("userUuidList") List<String> userUuidList);
 
     /**
      * 获取可用用户对应角色数量
