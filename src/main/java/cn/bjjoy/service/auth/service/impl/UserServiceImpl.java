@@ -4,11 +4,9 @@ import cn.bjjoy.service.auth.persistence.dao.UserMapper;
 import cn.bjjoy.service.auth.persistence.dao.UserRoleMapper;
 import cn.bjjoy.service.auth.service.UserService;
 import cn.bjjoy.service.auth.util.DataUtils;
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Arrays;

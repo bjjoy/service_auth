@@ -6,7 +6,6 @@ import cn.bjjoy.service.auth.service.OrganizationService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by lutiehua on 2017/8/25.
+ * Created by gxm on 2017/11/03.
  */
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
