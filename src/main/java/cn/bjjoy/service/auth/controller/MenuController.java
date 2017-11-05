@@ -16,7 +16,7 @@ import java.util.Map;
  */
 @RestController
 @CrossOrigin
-@RequestMapping("/admin/menus")
+@RequestMapping("/menu")
 public class MenuController {
 
     @Autowired

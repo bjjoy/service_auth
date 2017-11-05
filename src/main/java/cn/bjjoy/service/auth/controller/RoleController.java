@@ -70,8 +70,8 @@ public class RoleController {
      * 角色详情
      */
     @RequestMapping(value = "/getRole", method = RequestMethod.GET)
-    public ResponseResult getRole(@RequestParam Integer roleId, String traceID){
-        Map resultMap = roleService.getRole(roleId);
+    public ResponseResult getRole(@RequestParam Integer id, String traceID){
+        Map resultMap = roleService.getRole(id);
         return new ResponseResult(traceID, ResponseCode.OK, ResponseCode.OK_TEXT, resultMap);
     }
 

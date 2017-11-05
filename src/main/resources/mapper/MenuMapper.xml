@@ -4,15 +4,11 @@
   <resultMap id="BaseResultMap" type="cn.bjjoy.service.auth.entity.Menu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
-    <result column="parent_ids" jdbcType="VARCHAR" property="parentIds" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
-    <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="href" jdbcType="VARCHAR" property="href" />
-    <result column="target" jdbcType="VARCHAR" property="target" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
     <result column="type" jdbcType="TINYINT" property="type" />
-    <result column="is_show" jdbcType="TINYINT" property="isShow" />
     <result column="permission" jdbcType="VARCHAR" property="permission" />
     <result column="create_by" jdbcType="VARCHAR" property="createBy" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
@@ -22,11 +18,11 @@
     <result column="del_flag" jdbcType="CHAR" property="delFlag" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, parent_id, parent_ids, name, sort, code, href, target, icon, type, is_show, permission, 
+    id, parent_id, name, sort, href, icon, type, permission,
     create_by, create_date, update_by, update_date, remarks, del_flag
   </sql>
   <sql id="Simple_Column_List">
-    menu.id, menu.parent_id, menu.name, menu.sort, menu.code, menu.icon, menu.type, menu.permission
+    menu.id, menu.parent_id, menu.name, menu.sort, menu.icon, menu.type, menu.permission
   </sql>
   <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -47,32 +43,20 @@
       <if test="parentId != null">
         parent_id,
       </if>
-      <if test="parentIds != null">
-        parent_ids,
-      </if>
       <if test="name != null">
         name,
       </if>
       <if test="sort != null">
         sort,
       </if>
-      <if test="code != null">
-        code,
-      </if>
       <if test="href != null">
         href,
-      </if>
-      <if test="target != null">
-        target,
       </if>
       <if test="icon != null">
         icon,
       </if>
       <if test="type != null">
         type,
-      </if>
-      <if test="isShow != null">
-        is_show,
       </if>
       <if test="permission != null">
         permission,
@@ -109,23 +93,14 @@
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
       </if>
-      <if test="code != null">
-        #{code,jdbcType=VARCHAR},
-      </if>
       <if test="href != null">
         #{href,jdbcType=VARCHAR},
-      </if>
-      <if test="target != null">
-        #{target,jdbcType=VARCHAR},
       </if>
       <if test="icon != null">
         #{icon,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
         #{type,jdbcType=TINYINT},
-      </if>
-      <if test="isShow != null">
-        #{isShow,jdbcType=TINYINT},
       </if>
       <if test="permission != null">
         #{permission,jdbcType=VARCHAR},
@@ -156,32 +131,20 @@
       <if test="parentId != null">
         parent_id = #{parentId,jdbcType=INTEGER},
       </if>
-      <if test="parentIds != null">
-        parent_ids = #{parentIds,jdbcType=VARCHAR},
-      </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
       </if>
-      <if test="code != null">
-        code = #{code,jdbcType=VARCHAR},
-      </if>
       <if test="href != null">
         href = #{href,jdbcType=VARCHAR},
-      </if>
-      <if test="target != null">
-        target = #{target,jdbcType=VARCHAR},
       </if>
       <if test="icon != null">
         icon = #{icon,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
         type = #{type,jdbcType=TINYINT},
-      </if>
-      <if test="isShow != null">
-        is_show = #{isShow,jdbcType=TINYINT},
       </if>
       <if test="permission != null">
         permission = #{permission,jdbcType=VARCHAR},
@@ -212,7 +175,8 @@
     <include refid="Base_Column_List" />
     from menu
     <where>
-      del_flag = 0 order by sort asc
+      del_flag = 0
+      order by sort asc
     </where>
   </select>
 

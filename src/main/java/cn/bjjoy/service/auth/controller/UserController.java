@@ -18,7 +18,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.IdGenerator;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -118,7 +117,7 @@ public class UserController {
      * 获取用户列表
      * @param param
      */
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/getList", method = RequestMethod.GET)
     public ResponseResult getList(@RequestParam Map param){
         Integer pageNo = (param.get("pageNo") == null ? 1 : Integer.valueOf(param.get("pageNo").toString()));
         Integer pageSize = (param.get("pageSize") == null ? 20 : Integer.valueOf(param.get("pageSize").toString()));

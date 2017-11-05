@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
      * @param param
      */
     private List<String> getRoleIdList(Map param){
-        if(null != param.get("roleIds") && StringUtils.isNotBlank(param.get("roleIds").toString())) {
+        if(null == param.get("roleIds") || StringUtils.isBlank(param.get("roleIds").toString())) {
             return new ArrayList<>();
         }
         String roleIds = param.get("roleIds").toString();

@@ -49,23 +49,23 @@
     where user_uuid = #{userUuid,jdbcType=VARCHAR}
   </update>
 
-  <!--<resultMap id="UserRoleMap" extends="BaseResultMap" type="cn.bjjoy.service.auth.dto.UserRoleDto">-->
-    <!--<result column="name" jdbcType="VARCHAR" property="name" />-->
-  <!--</resultMap>-->
+  <resultMap id="UserRoleMap" extends="BaseResultMap" type="cn.bjjoy.service.auth.dto.UserRoleDto">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
 
-  <!--<select id="getUserRoleList" parameterType="java.util.List" resultMap="UserRoleMap">-->
-    <!--select ur.user_uuid, ur.role_id, r.name-->
-    <!--from user_role ur, role r-->
-    <!--<where>-->
-      <!--ur.role_id = r.id-->
-      <!--<if test="userUuidList != null">-->
-        <!--and ur.user_uuid in-->
-        <!--<foreach collection="userUuidList"  item="userUuid" separator="," open="(" close=")">-->
-          <!--#{userUuid,jdbcType=VARCHAR}-->
-        <!--</foreach>-->
-      <!--</if>-->
-    <!--</where>-->
-  <!--</select>-->
+  <select id="getUserRoleList" parameterType="java.util.List" resultMap="UserRoleMap">
+    select ur.user_uuid, ur.role_id, r.name
+    from user_role ur, role r
+    <where>
+      ur.role_id = r.id
+      <if test="userUuidList != null">
+        and ur.user_uuid in
+        <foreach collection="userUuidList"  item="userUuid" separator="," open="(" close=")">
+          #{userUuid,jdbcType=VARCHAR}
+        </foreach>
+      </if>
+    </where>
+  </select>
 
   <select id="getUserRoleCountByRoleId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
     select count(*)
