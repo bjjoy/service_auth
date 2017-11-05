@@ -129,7 +129,7 @@
     <include refid="Base_Column_List" />
     from role
     <where>
-      (del_flag is null or del_flag = 0)
+      del_flag = 0
     </where>
     <if test="pageSize != null and startRow != null">limit ${pageSize} offset ${startRow}</if>
   </select>
@@ -139,7 +139,7 @@
      count(*)
     from role
     <where>
-      (del_flag is null or del_flag = 0)
+      del_flag = 0
     </where>
   </select>
 </mapper>

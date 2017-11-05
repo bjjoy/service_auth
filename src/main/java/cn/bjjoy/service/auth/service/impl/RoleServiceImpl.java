@@ -2,6 +2,7 @@ package cn.bjjoy.service.auth.service.impl;
 
 import cn.bjjoy.service.auth.dto.MenuDto;
 import cn.bjjoy.service.auth.dto.RoleDto;
+import cn.bjjoy.service.auth.dto.UserRoleDto;
 import cn.bjjoy.service.auth.entity.Menu;
 import cn.bjjoy.service.auth.entity.Role;
 import cn.bjjoy.service.auth.entity.RoleMenu;
@@ -38,10 +39,10 @@ public class RoleServiceImpl implements RoleService {
 
 //    @Override
 //    public List<String> queryRoleByUser(String userUuid, String permission){
-//        GetRoleDto param = new GetRoleDto();
-//        param.setUserUuid(userUuid);
-//        param.setPermission(permission);
-//        return roleMapper.queryRoleByUser(param);
+//        UserRoleDto userRoleDto = new UserRoleDto();
+//        userRoleDto.setUserUuid(userUuid);
+//        userRoleDto.setPermission(permission);
+//        return roleMapper.queryRoleByUser(userRoleDto);
 //    }
 
     @Override

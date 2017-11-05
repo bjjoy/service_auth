@@ -36,6 +36,8 @@ public class UserRoleDto {
      */
     private Integer isSelect = 0;
 
+    private String permission;
+
     public Integer getId() {
         return id;
     }
@@ -83,5 +85,13 @@ public class UserRoleDto {
 
     public void setIsSelect(Integer isSelect) {
         this.isSelect = isSelect;
+    }
+
+    public String getPermission() {
+        return permission;
+    }
+
+    public void setPermission(String permission) {
+        this.permission = permission;
     }
 }
