@@ -44,12 +44,7 @@ public class MenuController {
     public ResponseResult createMenu(Menu menu, String traceID){
 
         menuService.insert(menu);
-        ResponseResult responseResult = new ResponseResult();
-        responseResult.setCode(ResponseCode.OK);
-        responseResult.setMsg(ResponseCode.OK_TEXT);
-        responseResult.setTraceID(traceID);
-        responseResult.setData(menu.getId());
-        return responseResult;
+        return new ResponseResult(traceID,ResponseCode.OK, ResponseCode.OK_TEXT, menu.getId());
     }
 
     /**

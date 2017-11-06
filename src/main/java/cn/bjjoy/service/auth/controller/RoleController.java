@@ -80,6 +80,9 @@ public class RoleController {
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResponseResult update(RoleDto roleDto, String traceID){
+        if (roleDto.getId() == null){
+            return new ResponseResult(traceID, ResponseCode.PARAM_ERROR, "id is null", roleDto);
+        }
         int count = roleService.update(roleDto);
         return new ResponseResult(traceID, ResponseCode.OK, ResponseCode.OK_TEXT, count);
     }
@@ -104,6 +107,9 @@ public class RoleController {
      */
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public ResponseResult delete(Role role, String traceID){
+        if (role.getId() == null){
+            return new ResponseResult(traceID, ResponseCode.PARAM_ERROR, "id is null", role);
+        }
         role.setDelFlag("1");
         int count = roleService.delete(role);
         return new ResponseResult(traceID, ResponseCode.OK, ResponseCode.OK_TEXT, count);

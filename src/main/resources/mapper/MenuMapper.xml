@@ -84,9 +84,6 @@
       <if test="parentId != null">
         #{parentId,jdbcType=INTEGER},
       </if>
-      <if test="parentIds != null">
-        #{parentIds,jdbcType=VARCHAR},
-      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
