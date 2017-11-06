@@ -1,0 +1,494 @@
+{
+	"variables": [],
+	"info": {
+		"name": "auth_service",
+		"_postman_id": "c6bd0a9c-17e7-a25a-3a05-f7127ea6d494",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户列表",
+			"request": {
+				"url": "http://localhost:8010/user/getList",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "用户新建",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/user/insert?password=123456&loginName=test1&name=测试1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"user",
+						"insert"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "123456",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "loginName",
+							"value": "test1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "name",
+							"value": "测试1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "用户更新",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/user/update?loginName=test2&name=测试2&uuid=e170921d5e4f4d52bde5ffdb6ef08d33&roleIds=1$$2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"user",
+						"update"
+					],
+					"query": [
+						{
+							"key": "loginName",
+							"value": "test2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "name",
+							"value": "测试2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "uuid",
+							"value": "e170921d5e4f4d52bde5ffdb6ef08d33",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "roleIds",
+							"value": "1$$2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "用户详情",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/user/getUser?uuid=e170921d5e4f4d52bde5ffdb6ef08d33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"user",
+						"getUser"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "e170921d5e4f4d52bde5ffdb6ef08d33",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "用户删除",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/user/delete?uuid=e170921d5e4f4d52bde5ffdb6ef08d33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"user",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "e170921d5e4f4d52bde5ffdb6ef08d33",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "角色列表",
+			"request": {
+				"url": "http://localhost:8010/role/getList",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "角色详情",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/role/getRole?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"role",
+						"getRole"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "角色更新",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/role/update?id=2&name=运营test&menuIds=1$$2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"role",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "name",
+							"value": "运营test",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "menuIds",
+							"value": "1$$2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "角色删除",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/role/delete?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"role",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "角色新建",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/role/create?name=test&enname=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"role",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "enname",
+							"value": "test",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "菜单新建",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/menu/create?name=test&sort=10101&permission=system:test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"menu",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "sort",
+							"value": "10101",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "permission",
+							"value": "system:test",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "菜单更新",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/menu/update?name=test2&sort=10101&permission=system:test2&id=48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"menu",
+						"update"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "sort",
+							"value": "10101",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "permission",
+							"value": "system:test2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "id",
+							"value": "48",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "菜单详情",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/menu/getMenu?id=48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"menu",
+						"getMenu"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "48",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "菜单列表",
+			"request": {
+				"url": "http://localhost:8010/menu/getList",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "菜单删除",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8010/menu/delete?id=48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"menu",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "48",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
