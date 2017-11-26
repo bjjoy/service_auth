@@ -2,6 +2,7 @@ package cn.bjjoy.service.auth.controller;
 
 import cn.bjjoy.service.auth.base.ResponseCode;
 import cn.bjjoy.service.auth.base.ResponseResult;
+import cn.bjjoy.service.auth.constants.UserConstant;
 import cn.bjjoy.service.auth.dto.UserDto;
 import cn.bjjoy.service.auth.dto.UserRoleDto;
 import cn.bjjoy.service.auth.entity.Menu;
@@ -175,5 +176,23 @@ public class UserController {
         param.put("delFlag","1");
         userService.deleteUser(param);
         return new ResponseResult(null, ResponseCode.OK, ResponseCode.OK_TEXT, user.getUuid());
+    }
+
+    /**
+     * 用户登录验证
+     */
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseResult login(UserDto userDto){
+        if (userDto.getLoginName() == null || userDto.getPassword() == null){
+            return new ResponseResult(UserConstant.LOGIN_PARAM_LACK, UserConstant.LOGIN_PARAM_LACK_MSG);
+        }
+        Map param = new HashMap();
+        param.put("loginName", userDto.getLoginName());
+        param.put("password", userDto.getPassword());
+        List<Map> userList = userService.getList(param);
+        if (userList == null || userList.size() == 0){
+            return new ResponseResult(UserConstant.NO_USER, UserConstant.NO_USER_MSG);
+        }
+        return new ResponseResult(ResponseCode.OK, ResponseCode.OK_TEXT, userList.get(0));
     }
 }

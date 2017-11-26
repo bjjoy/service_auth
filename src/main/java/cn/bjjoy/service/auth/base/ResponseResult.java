@@ -14,6 +14,27 @@ public class ResponseResult {
 
     }
 
+    public ResponseResult(Integer code, String msg){
+        this.traceID = null;
+        this.code = code;
+        this.msg = msg;
+        this.data = "";
+    }
+
+    public ResponseResult(String traceID, Integer code, String msg){
+        this.traceID = traceID;
+        this.code = code;
+        this.msg = msg;
+        this.data = "";
+    }
+
+    public ResponseResult(Integer code, String msg, Object data){
+        this.traceID = null;
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
     public ResponseResult(String traceID, Integer code, String msg, Object data){
         this.traceID = traceID;
         this.code = code;
