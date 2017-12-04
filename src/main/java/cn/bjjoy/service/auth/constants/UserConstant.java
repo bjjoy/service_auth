@@ -1,7 +1,7 @@
 package cn.bjjoy.service.auth.constants;
 
 /**
- * Created by GXM on 2017/11/25
+ * Created by bjjoy on 2017/11/25
  **/
 public interface UserConstant {
 

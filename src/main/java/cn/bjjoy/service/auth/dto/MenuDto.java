@@ -1,7 +1,7 @@
 package cn.bjjoy.service.auth.dto;
 
 /**
- * Created by gxm on 2017/11/02.
+ * Created by bjjoy on 2017/11/02.
  */
 public class MenuDto {
 

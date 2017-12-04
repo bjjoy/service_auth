@@ -5,7 +5,7 @@ import cn.bjjoy.service.auth.entity.Organization;
 import java.util.List;
 
 /**
- * Created by gxm on 2017/11/02.
+ * Created by bjjoy on 2017/11/02.
  */
 public interface OrganizationService {
 

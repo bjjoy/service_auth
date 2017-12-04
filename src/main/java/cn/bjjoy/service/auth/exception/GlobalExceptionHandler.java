@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 /**
- * Created by GXM on 2017/11/15
+ * Created by bjjoy on 2017/11/15
  **/
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -21,8 +21,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = OperationException.class)
     public ResponseResult operationExceptionHandler(OperationException oe){
         LOGGER.error(oe.getData());
-        LOGGER.error(oe.getMessage());
-        return new ResponseResult(ResponseCode.SYSTEM_ERROR, ResponseCode.SYSTEM_ERROR_TEXT);
+        LOGGER.error(oe.getMessage(), oe);
+        return new ResponseResult(oe.getCode(), oe.getMsg());
     }
 
     @ResponseBody

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Created by gxm on 2017/11/02
+ * Created by bjjoy on 2017/11/02
  */
 @Service
 public class AreaServiceImpl implements AreaService {

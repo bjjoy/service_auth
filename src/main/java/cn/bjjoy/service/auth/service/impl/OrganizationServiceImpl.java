@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by gxm on 2017/11/03.
+ * Created by bjjoy on 2017/11/03.
  */
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
