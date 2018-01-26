@@ -1,7 +1,8 @@
 package cn.bjjoy.service.auth.base;
 
 /**
- * Created by bjjoy on 2017/11/5
+ * @author bjjoy
+ * @date 2017/11/5
  **/
 public class ResponseCode {
 

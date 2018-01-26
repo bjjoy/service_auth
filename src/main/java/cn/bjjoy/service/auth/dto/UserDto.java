@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by bjjoy on 2017/11/01.
+ *
+ * @author bjjoy
+ * @date 2017/11/01
  */
 public class UserDto {
 

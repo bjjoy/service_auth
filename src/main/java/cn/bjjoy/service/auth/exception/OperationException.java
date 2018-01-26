@@ -1,7 +1,8 @@
 package cn.bjjoy.service.auth.exception;
 
 /**
- * Created by bjjoy on 2017/11/15
+ * @author bjjoy
+ * @date 2017/11/15
  **/
 public class OperationException extends Exception {
 

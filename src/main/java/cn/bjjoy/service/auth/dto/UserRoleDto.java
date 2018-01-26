@@ -1,7 +1,9 @@
 package cn.bjjoy.service.auth.dto;
 
 /**
- * Created by bjjoy on 2017/11/02.
+ *
+ * @author bjjoy
+ * @date 2017/11/02
  */
 public class UserRoleDto {
 

@@ -27,7 +27,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by bjjoy on 2017/8/28.
+ * @author bjjoy
+ * @date 2017/8/28
  */
 @RestController
 @RequestMapping("/user")
@@ -61,8 +62,10 @@ public class UserController {
         }
         Map param = DataUtils.getData(userDto, Map.class);
         String uuid = IdUtils.getUuid();
-        param.put("uuid", uuid); //user表uuid
-        param.put("userUuid", uuid); //user_role表user_uuid
+        //user表uuid
+        param.put("uuid", uuid);
+        //user_role表user_uuid
+        param.put("userUuid", uuid);
         param.put("password", EncryptUtils.encryptMD5(userDto.getPassword()));
         this.userService.insert(param);
         return new ResponseResult(null, ResponseCode.OK, ResponseCode.OK_TEXT, uuid);

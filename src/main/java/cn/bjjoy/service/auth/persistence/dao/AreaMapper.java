@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author bjjoy
+ * @date 2017/11/12
+ */
 @Repository
 @Mapper
 public interface AreaMapper {
@@ -20,6 +24,8 @@ public interface AreaMapper {
 
     /**
      * 根据id列表获取地区信息
+     * @param idList
+     * @return List
      */
     List<Area> getAreaList(@Param("idList") List<Integer> idList);
 

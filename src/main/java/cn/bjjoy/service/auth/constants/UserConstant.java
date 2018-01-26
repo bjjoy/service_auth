@@ -1,7 +1,8 @@
 package cn.bjjoy.service.auth.constants;
 
 /**
- * Created by bjjoy on 2017/11/25
+ * @author bjjoy
+ * @date 2017/11/25
  **/
 public interface UserConstant {
 

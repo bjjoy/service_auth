@@ -1,5 +1,9 @@
 package cn.bjjoy.service.auth.base;
 
+/**
+ * @author bjjoy
+ * @date 2018/01/26
+ */
 public class ResponseResult {
 
     private String traceID;

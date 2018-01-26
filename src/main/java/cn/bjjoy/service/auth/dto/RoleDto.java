@@ -3,7 +3,9 @@ package cn.bjjoy.service.auth.dto;
 import java.util.Date;
 
 /**
- * Created by guoxiaoming on 2017/11/02.
+ *
+ * @author bjjoy
+ * @date 2017/11/02
  */
 public class RoleDto {
 
